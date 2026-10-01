@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Light Deathplay — MTA:SA Rol Yapma Sunucusu</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Üst Menü Açılır (Dropdown) Stilleri - Sayfayı aşağı kaydırmaz */
+  .nav-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #121214;
+    min-width: 240px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+    border: 1px solid #29292e;
+    border-radius: 8px;
+    z-index: 1000;
+    overflow: hidden;
+  }
+  .nav-dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s, padding-left 0.2s, color 0.2s;
+  }
+  .nav-dropdown-content a:hover {
+    background: #1a1a1e;
+    padding-left: 20px;
+    color: #3b82f6;
+  }
+  /* Tıklandığında veya fareyle gelince açılması için */
+  .nav-dropdown.active .nav-dropdown-content,
+  .nav-dropdown:hover .nav-dropdown-content {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <a href="#top" class="logo">LIGHT<span class="dot">·</span>DEATHPLAY</a>
+  <nav class="nav-links">
+    <a href="#top" class="nav-item active">Ana Sayfa</a>
+    <a href="#neden" class="nav-item">Neden Biz</a>
+    <a href="#nasil" class="nav-item">Nasıl Başlarım</a>
+    
+    <!-- Üst Menüdeki Başvuru Açılır Menüsü (Doğru dosya isimleriyle) -->
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="javascript:void(0)" class="nav-item" onclick="toggleNavDropdown(event)">Başvuru ▾</a>
+      <div class="nav-dropdown-content">
+        <a href="lspd-basvuru.html">🛡️ LSPD Başvurusu</a>
+        <a href="lssd-basvuru.html">⭐ LSSD Başvurusu</a>
+        <a href="basvuru.html">⚡ Sunucu Yetkili Başvurusu</a>
+      </div>
+    </div>
+  </nav>
+  <a href="mtasa://185.185.185.185:22003" class="nav-cta">Sunucuya Katıl</a>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-content">
+    <h1 class="hero-title">Los Santos Seni Bekliyor</h1>
+    <p class="hero-desc">Light Deathplay, her kararın bir karşılığı olduğu gerçekçi bir MTA:SA rol yapma sunucusu. Karakterini kur, şehre karış, kendi hikâyeni yaz.</p>
+
+    <div class="hero-actions">
+      <a href="mtasa://185.185.185.185:22003" class="btn btn-primary">MTA'da Bağlan</a>
+      <a href="https://multitheftauto.com/" target="_blank" rel="noopener" class="btn btn-secondary">MTA:SA İndir</a>
+      <a href="https://dosya.co/s0plkghxsu1f/Gta-sa_By-İces_By-Ahmets.zip.html" target="_blank" rel="noopener" class="btn btn-secondary">GTA SA İndir</a>
+    </div>
+
+    <div class="hero-status">
+      <div class="status-cell"><span class="status-dot"></span> <strong id="status-text">Aktif</strong></div>
+      <div class="status-cell">IP <strong>185.185.185.185:22003</strong></div>
+      <div class="status-cell"><button class="status-copy" id="copy-ip">IP'yi kopyala</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="features-section" id="neden">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Neden Light Deathplay?</h2>
+      <p>Şehrin hikâyesini sen yazarsın. Aşağıdaki üç şey bizi diğer sunuculardan ayırıyor.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">KARAKTER</span>
+        <h3>Sıfırdan bir kimlik</h3>
+        <p>Geçmişini, mesleğini ve tarzını sen belirlersin. Hazır şablon karakter yok, her hikâye kendi oyuncusundan doğar.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">EKONOMİ</span>
+        <h3>Dengeli bir şehir</h3>
+        <p>İş, mülk ve araç sistemleri gerçekçi bir ekonomi üzerine kurulu; kısa yoldan zenginleşme yok, emek var.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">TOPLULUK</span>
+        <h3>Aktif bir ekip</h3>
+        <p>Şikayetler saatler içinde değerlendirilir, güncellemeler düzenli gelir, topluluk kararlara dahil edilir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-section" id="nasil">
+  <div class="wrap how-grid">
+    <div class="how-left">
+      <div class="section-head" style="margin-bottom: 30px;">
+        <h2>Nasıl Başlarım?</h2>
+        <p>Dört adımda Los Santos sokaklarındasın.</p>
+      </div>
+      <div class="steps-list">
+        <div class="step-item active">
+          <span class="step-num">1</span>
+          <div class="step-body">
+            <strong>MTA:SA'yı indir</strong>
+            <span>Oyunun kurulu değilse üstteki bağlantıdan indir ve kur.</span>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">2</span>
+          <div class="step-body">
+            <strong>Sunucuya bağlan</strong>
+            <span>"Sunucuya Katıl" butonuna bas ya da IP'yi kopyalayıp sunucu listesine ekle.</span>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">3</span>
+          <div class="step-body">
+            <strong>Karakterini oluştur</strong>
+            <span>Adını, geçmişini ve görünümünü belirleyip şehre ilk adımını at.</span>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">4</span>
+          <div class="step-body">
+            <strong>Hikâyene başla</strong>
+            <span>Bir iş bul, bir ekibe katıl ya da kendi yolunu çiz — kararların seni bekliyor.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="how-visual">
+      <div class="how-visual-frame">
+        <img src="Gta.jpg" alt="Light Deathplay karakteri Grove Street'te">
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleNavDropdown(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('navDropdown');
+    dropdown.classList.toggle('active');
+  }
+
+  // Sayfada başka bir yere tıklandığında menüyü kapat
+  window.addEventListener('click', function() {
+    const dropdown = document.getElementById('navDropdown');
+    if (dropdown) {
+      dropdown.classList.remove('active');
+    }
+  });
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="logo">LIGHT<span class="dot">·</span>DEATHPLAY</a>
+        <p>Gerçekçi bir Los Santos deneyimi. Her seçimin bir karşılığı var.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Sunucu</h4>
+          <a href="mtasa://185.185.185.185:22003">Bağlan</a>
+          <a href="#nasil">Nasıl Başlarım</a>
+          <a href="#neden">Kurallar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Topluluk</h4>
+          <a href="https://discord.gg/2nWKxBMngr" target="_blank" rel="noopener">Discord</a>
+          <a href="basvuru.html">Yetkili Başvurusu</a>
+          <a href="#">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <h4>İndirmeler</h4>
+          <a href="https://multitheftauto.com/" target="_blank" rel="noopener">MTA:SA</a>
+          <a href="https://dosya.co/s0plkghxsu1f/Gta-sa_By-İces_By-Ahmets.zip.html" target="_blank" rel="noopener">GTA SA</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LIGHT DEATHPLAY</span>
+      <span>Rockstar Games / MTA:SA ile bağlantılı değildir</span>
+    </div>
+  </div>
+</footer>
+
+<div class="server-widget-fixed">
+  <span class="label">OYUNCU</span>
+  <span class="count" id="player-count">Yakında</span>
+</div>
+
+<div class="toast" id="toast">IP kopyalandı</div>
+
+<script src="script.js"></script>
+</body>
+</html>

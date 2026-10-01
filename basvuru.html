@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yetkili Başvurusu — Light Deathplay</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <a href="index.html" class="logo">LIGHT<span class="dot">·</span>DEATHPLAY</a>
+  <nav class="nav-links">
+    <a href="index.html" class="nav-item">Ana Sayfa</a>
+    <a href="index.html#neden" class="nav-item">Neden Biz</a>
+    <a href="index.html#nasil" class="nav-item">Nasıl Başlarım</a>
+    <a href="basvuru.html" class="nav-item active">Yetkili Başvurusu</a>
+  </nav>
+  <a href="mtasa://185.185.185.185:22003" class="nav-cta">Sunucuya Katıl</a>
+</header>
+
+<section class="apply-hero" id="top">
+  <div class="wrap apply-hero-content">
+    <span class="apply-eyebrow">Ekibe katıl</span>
+    <h1 class="apply-title">Yetkili Başvuru Formu</h1>
+    <p class="apply-desc">Şehri ayakta tutan ekibin bir parçası olmak ister misin? Aşağıdaki formu dürüstçe doldur, gerisini ekibimiz değerlendirsin. Başvurun doğrudan yetkili ekibimizin Discord kanalına düşer.</p>
+  </div>
+</section>
+
+<section class="apply-section">
+  <div class="wrap apply-grid">
+
+    <aside class="apply-info">
+      <div class="info-card">
+        <h3>Aranan nitelikler</h3>
+        <ul class="info-list">
+          <li>18 yaş veya üzeri olmak</li>
+          <li>Discord ve Ses (mikrofon) kullanabilmek</li>
+          <li>Haftada en az 10 saat aktif olabilmek</li>
+          <li>Sunucu kurallarına hâkim olmak</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Süreç nasıl işliyor?</h3>
+        <ul class="info-list numbered">
+          <li>Formu eksiksiz doldur ve gönder</li>
+          <li>Ekip başvurunu inceler</li>
+          <li>Uygun bulunursan Discord'dan görüşmeye çağrılırsın</li>
+          <li>Sonuç yine Discord üzerinden sana iletilir</li>
+        </ul>
+      </div>
+    </aside>
+
+    <form class="apply-form" id="apply-form" novalidate>
+
+      <div class="form-block">
+        <span class="form-block-num">01</span>
+        <div class="form-block-body">
+          <h4>Kimlik bilgilerin</h4>
+
+          <div class="form-row two">
+            <div class="form-group">
+              <label for="ic-isim">Oyun içi ad soyad</label>
+              <input type="text" id="ic-isim" name="icIsim" placeholder="Örn. Carl Johnson" required>
+            </div>
+            <div class="form-group">
+              <label for="yas">Yaşın</label>
+              <input type="number" id="yas" name="yas" min="10" max="99" placeholder="Örn. 19" required>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div class="form-group">
+              <label for="discord-kullanici">Discord kullanıcı adın</label>
+              <input type="text" id="discord-kullanici" name="discordKullanici" placeholder="Örn. carljohnson" required>
+            </div>
+            <div class="form-group">
+              <label for="discord-id">Discord ID <span class="optional">(opsiyonel)</span></label>
+              <input type="text" id="discord-id" name="discordId" placeholder="Örn. 123456789012345678">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-block">
+        <span class="form-block-num">02</span>
+        <div class="form-block-body">
+          <h4>Sunucu geçmişin</h4>
+
+          <div class="form-row two">
+            <div class="form-group">
+              <label for="oynama-suresi">Ne zamandır Light Deathplay'desin?</label>
+              <input type="text" id="oynama-suresi" name="oynamaSuresi" placeholder="Örn. 4 aydır" required>
+            </div>
+            <div class="form-group">
+              <label for="haftalik-saat">Haftalık aktif olabileceğin saat</label>
+              <input type="text" id="haftalik-saat" name="haftalikSaat" placeholder="Örn. 15-20 saat" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="deneyim">Daha önce başka bir sunucuda yetkililik yaptın mı?</label>
+            <textarea id="deneyim" name="deneyim" rows="3" placeholder="Yaptıysan hangi sunucu, hangi rütbe ve ne kadar süreyle olduğunu yaz. Yapmadıysan kısaca belirt."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-block">
+        <span class="form-block-num">03</span>
+        <div class="form-block-body">
+          <h4>Seni tanıyalım</h4>
+
+          <div class="form-group">
+            <label for="neden">Neden yetkili olmak istiyorsun?</label>
+            <textarea id="neden" name="neden" rows="4" placeholder="Motivasyonunu kendi cümlelerinle anlat." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="senaryo">Yakın arkadaşının kural ihlali yaptığını gördün. Ne yaparsın?</label>
+            <textarea id="senaryo" name="senaryo" rows="4" placeholder="Bu durumda izleyeceğin yolu adım adım anlat." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="ek-bilgi">Eklemek istediğin başka bir şey var mı? <span class="optional">(opsiyonel)</span></label>
+            <textarea id="ek-bilgi" name="ekBilgi" rows="3" placeholder="Varsa buraya yazabilirsin."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <p class="form-note">Gönderdiğin bilgiler yalnızca yetkili ekibimizle paylaşılır. Yanlış veya eksik bilgi içeren başvurular değerlendirmeye alınmaz.</p>
+        <button type="submit" class="btn btn-primary form-submit" id="submit-btn">Başvuruyu Gönder</button>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">LIGHT<span class="dot">·</span>DEATHPLAY</a>
+        <p>Gerçekçi bir Los Santos deneyimi. Her seçimin bir karşılığı var.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Sunucu</h4>
+          <a href="mtasa://185.185.185.185:22003">Bağlan</a>
+          <a href="index.html#nasil">Nasıl Başlarım</a>
+          <a href="index.html#neden">Kurallar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Topluluk</h4>
+          <a href="https://discord.gg/UNMCfuBeXM" target="_blank" rel="noopener">Discord</a>
+          <a href="basvuru.html">Yetkili Başvurusu</a>
+          <a href="#">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <h4>İndirmeler</h4>
+          <a href="https://multitheftauto.com/" target="_blank" rel="noopener">MTA:SA</a>
+          <a href="https://dosya.co/s0plkghxsu1f/Gta-sa_By-İces_By-Ahmets.zip.html" target="_blank" rel="noopener">GTA SA</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LIGHT DEATHPLAY</span>
+      <span>Rockstar Games / MTA:SA ile bağlantılı değildir</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Başvurun gönderildi</div>
+
+<script src="basvuru.js"></script>
+</body>
+</html>
+<script src="basvuru.js"></script>
